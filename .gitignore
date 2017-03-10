@@ -1,6 +1,7 @@
 # Node build artifacts
 node_modules
 npm-debug.log
+model
 
 # Local development
 *.env
@@ -12,5 +13,4 @@ Dockerfile
 docker-compose.yml
 
 .idea/
-*.nosql
 
