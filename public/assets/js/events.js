@@ -9,11 +9,12 @@ var eventsHandler = function() {
             e.preventDefault();
             $('.submit-text').addClass('hidden');
             $('.submit-loader').removeClass('hidden');
+            var url = window.location.host;
 
             $.ajax({
                 type: "POST",
                 cache: false,
-                url: 'http://wedding-site-zeeshaanl699662.codeanyapp.com:8000/rsvp',
+                url: url+ '/rsvp',
                 data: $(this).serialize(),
                 success: function(data) {
                     $('.submit-loader').addClass('hidden');
