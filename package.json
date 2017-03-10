@@ -2,6 +2,9 @@
   "name": "wedding-site",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "5.9.1"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

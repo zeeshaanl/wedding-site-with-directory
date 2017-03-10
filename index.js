@@ -5,6 +5,8 @@ var DB = require('nosql');
 var nosql = DB.load('model/guests.nosql');
 var bodyParser = require('body-parser');
 
+app.set('port', (process.env.PORT || 5000));
+
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
@@ -64,4 +66,6 @@ function buildHtml(pageResponse) {
   });
 }
 
-app.listen(8000);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
