@@ -9,12 +9,13 @@ var eventsHandler = function() {
             e.preventDefault();
             $('.submit-text').addClass('hidden');
             $('.submit-loader').removeClass('hidden');
-            var url = window.location.host;
+            var url = window.location.href;
+            console.log(url+ '/rsvp');
 
             $.ajax({
                 type: "POST",
                 cache: false,
-                url: url+ '/rsvp',
+                url: url+ 'rsvp',
                 data: $(this).serialize(),
                 success: function(data) {
                     $('.submit-loader').addClass('hidden');
