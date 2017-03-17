@@ -8,6 +8,8 @@ var eventsHandler = function() {
             $("#rsvp-form").attr("disabled", true);
             e.preventDefault();
             $('.submit-text').addClass('hidden');
+            $('.submit-success').addClass('hidden');
+
             $('.submit-loader').removeClass('hidden');
             var url = window.location.href;
             console.log(url+ '/rsvp');
@@ -20,6 +22,7 @@ var eventsHandler = function() {
                 success: function(data) {
                     $('.submit-loader').addClass('hidden');
                     $('.submit-success').removeClass('hidden');
+                    console.log(data);
                 }
             });
         });
@@ -27,7 +30,9 @@ var eventsHandler = function() {
             if ($(this).val() === 'Yes') {
                 $('.meal-pref').fadeIn('fast');
             } else if ($(this).val() === 'No') {
-                $('.meal-pref').fadeOut('fast');
+                $('.meal-pref').fadeOut('fast', function() {
+                    $(".meal-pref select option[name='default']").prop('selected', true);
+                });
             }
         });
         $('.rsvp-button').click(function() {
