@@ -10,7 +10,6 @@ var Guest = require('./Model/Guest');
 
 router.get('/', function(request, response) {
     response.sendFile(path.join(__dirname + '/index.html'));
-    console.log(process.env.MONGODB_URI);
 });
 
 router.get('/list', function(request, pageResponse) {
