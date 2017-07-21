@@ -17,8 +17,9 @@ const sendMail = (name, rsvp, meal) => {
         transporter.sendMail(generateMail(name, rsvp, meal), (error, info) => {
             if (error) {
                 reject(error);
+            } else {
+                resolve(info.response);
             }
-            resolve(info.response);
         });
     });
 };
@@ -33,7 +34,7 @@ const generateMail = (name, rsvp, meal) => {
         'Non-Vegetarian': '🍖'
     };
 
-    const mealPreference = rsvp === 'Yes' ? `Their meal preference is <b>${meal}</b> ${mealUnicode[meal]}<br /><br />` : '';
+    const mealPreference = rsvp === 'Yes' ? `Their meal preference is <b>${meal}</b> ${mealUnicode[ meal ]}<br /><br />` : '';
 
     return {
         from: `"Sheznat Wedding" <sheznat.wedding@gmail.com>`, // sender address
@@ -47,7 +48,7 @@ const generateMail = (name, rsvp, meal) => {
 
         html: `Hi Natasha and Shezad,
             <br /><br />
-            <b>${name}</b> has responded with a <b style="color:${rsvpColor[rsvp]}">${rsvp}</b>
+            <b>${name}</b> has responded with a <b style="color:${rsvpColor[ rsvp ]}">${rsvp}</b>
             <br /><br />
             ${mealPreference}
         - With ❤ From Your Wedding Site️`, // plain text body
