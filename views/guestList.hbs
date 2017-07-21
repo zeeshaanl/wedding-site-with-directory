@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>
+        Wedding Guest List
+    </title>
+</head>
+<body class="list">
+    <h2>Guest List</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>RSVP</th>
+            <th>Meal Preference</th>
+        </tr>
+        {{#each guestList}}
+            <tr><td>{{this.name}}</td><td>{{this.rsvp}}</td><td>{{this.meal}}</td></tr>
+        {{/each}}
+    </table>
+    <div><h4>Yes: {{yesCount}}</h4><h4>No: {{noCount}}</h4></div>
+</body>
+</html>

@@ -51,7 +51,8 @@ const generateMail = (name, rsvp, meal) => {
             <b>${name}</b> has responded with a <b style="color:${rsvpColor[ rsvp ]}">${rsvp}</b>
             <br /><br />
             ${mealPreference}
-        - With ❤ From Your Wedding Site️`, // plain text body
+            
+        From: Your Wedding Site️ ❤`, // plain text body
     };
 };
 

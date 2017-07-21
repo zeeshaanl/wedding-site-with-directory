@@ -5740,6 +5740,15 @@ body.is-loading .items.onload-fade-in > * > .inner {
 .index > * {
   border-top-color: rgba(0, 0, 0, 0.2); }
 
+.signin {
+  margin: 30px; }
+  .signin input {
+    height: 52px; }
+  .signin .alert {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 15px; }
+
 /* Wrapper */
 #wrapper {
   background-color: inherit;

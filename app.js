@@ -1,16 +1,19 @@
-var dotenv = require('dotenv');
+const dotenv = require('dotenv');
 dotenv.config();
-var express = require('express');
-var app = express();
-var appController = require('./appController');
 
-module.exports = app;
+const express = require('express');
+const app = express();
+const routes = require('./routes');
+const expressHbs = require('express-handlebars');
 
-app.set('port', (process.env.PORT || 5000));
-
-app.use(appController);
+app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'main.hbs'}));
+app.set('view engine', 'hbs');
+app.use(routes);
 app.use(express.static(__dirname + '/public'));
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.set('port', (process.env.PORT || 5000));
+app.listen(app.get('port'), function () {
+    console.log('Node app is running on port', app.get('port'));
 });
+
+module.exports = app;
