@@ -7,8 +7,9 @@
   },
   "main": "app.js",
   "scripts": {
-    "start": "sass --update public/assets/sass/:public/assets/css && nodemon app.js",
-    "watch": "sass --watch public/assets/sass/:public/assets/css",
+    "start": "node app.js",
+    "dev-start": "nodemon app.js",
+    "sass-watch": "sass --watch public/assets/sass/:public/assets/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
