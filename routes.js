@@ -9,9 +9,10 @@ const db = require('./config/db');
 const Guest = require('./Model/Guest');
 const listAction = require('./Controller/ListController');
 const rsvpAction = require('./Controller/RsvpController');
+const indexAction = require('./Controller/IndexController');
 
 router.get('/', function (request, response) {
-    response.sendFile(path.join(__dirname + '/views/index.html'));
+    indexAction(request, response);
 });
 
 router.all('/list', function (request, response) {

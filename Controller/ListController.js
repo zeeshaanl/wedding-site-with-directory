@@ -22,7 +22,6 @@ const listAction = async (request, response) => {
                 }
             });
             response.render('guestList', {
-                layout: false,
                 guestList,
                 yesCount,
                 noCount
@@ -33,7 +32,7 @@ const listAction = async (request, response) => {
 
     } else {
         const passwordMessage = (Object.keys(data).length && data.password !== process.env.GUESTLIST_PASS) ? 'Incorrect Password' : '';
-        response.render('signIn', { layout: false, passwordMessage })
+        response.render('signIn', { passwordMessage })
     }
 };
 
