@@ -19,10 +19,10 @@
     "express": "^4.15.3",
     "express-handlebars": "^3.0.0",
     "mongoose": "^4.11.3",
-    "nodemailer": "^4.0.1"
+    "nodemailer": "^4.0.1",
+    "dotenv": "^4.0.0"
   },
   "devDependencies": {
-    "dotenv": "^4.0.0",
     "nodemon": "^1.11.0"
   }
 }
