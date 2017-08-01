@@ -27,7 +27,9 @@
   text-align: center; }
   .intro-img .intro-text {
     color: floralwhite;
-    font-size: 50px; }
+    font-size: 50px;
+    position: relative;
+    top: 4rem; }
   .intro-img .intro-rsvp {
     position: absolute;
     bottom: 20px;
