@@ -18,30 +18,67 @@
 .hidden {
   display: none !important; }
 
+.parallax {
+  position: relative; }
+
 .intro-img {
   height: 100vh;
-  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
-  .intro-img .intro-text {
-    color: floralwhite;
-    font-size: 50px;
-    position: relative;
-    top: 4rem; }
-  .intro-img .intro-rsvp {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    text-align: center; }
-    .intro-img .intro-rsvp .rsvp-button {
-      cursor: pointer;
-      padding: 10px 55px;
-      border: 1px solid white;
-      color: white;
-      font-weight: bold;
-      font-size: 16px; }
+
+.intro-img-one {
+  background-image: url("/images/intro1.jpg");
+  z-index: 0;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.intro-img-two {
+  background-image: url("/images/intro2.jpg");
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 1; }
+
+.show-second .intro-img-two {
+  opacity: 1;
+  transition: opacity 1.5s ease-in-out; }
+
+.intro-text, .intro-rsvp {
+  z-index: 2; }
+
+.intro-text {
+  color: floralwhite;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  text-shadow: 1px 1px 2px #969696;
+  width: 100%;
+  text-align: center; }
+
+.intro-rsvp {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center; }
+  .intro-rsvp .rsvp-button {
+    cursor: pointer;
+    padding: 10px 55px;
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    font-size: 16px; }
 
 #rsvp-form input, #rsvp-form select {
   font-size: 22px; }
