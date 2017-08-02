@@ -4,7 +4,6 @@ const eventsHandler = function () {
     };
 
     function init() {
-        console.log('in init');
         initElements();
         attachListener();
         setImageRotationInterval();
