@@ -47,6 +47,11 @@
 
 }
 
+span.meal-label {
+	display: inline-block;
+	min-width: 91px;
+}
+
 .intro-img-two {
 	background-image: url("/images/intro2.jpg");
 	position: absolute;
@@ -74,6 +79,9 @@
 @media (max-width: 736px) {
 	.intro-img-one, .intro-img-two {
 		background-attachment: scroll !important;
+	}
+	.meal-pref {
+		margin: 30px auto 40px
 	}
 }
 
@@ -109,6 +117,10 @@
 .rsvp-block.content {
 	text-align: center;
 	padding: 2rem !important;
+}
+
+.rsvp-header {
+	margin-bottom: 25px;
 }
 
 #rsvp-form {
@@ -151,7 +163,7 @@
 		left: 45px;
 		top: 11px;
 		font-size: 16px;
-		pointer-events:none;
+		pointer-events: none;
 	}
 }
 
@@ -223,18 +235,6 @@
 	}
 }
 
-//@media (max-width: 767px) {
-//	#rsvp-form {
-//		.meal-pref {
-//			margin: 35px auto;
-//			width: 100%;
-//			select {
-//				font-size: 18px;
-//			}
-//		}
-//	}
-//}
-
 @media (max-width: 991px) {
 	#rsvp-form {
 		.rsvp-radio-container {
@@ -254,7 +254,7 @@
 		}
 	}
 	.submit-button {
-		width: 47% !important;
+		width: 54% !important;
 	}
 }
 

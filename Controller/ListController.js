@@ -5,7 +5,7 @@ const sendErrorMail = Mailer.sendErrorMail;
 const listAction = async (request, response) => {
     const data = request.body;
 
-    if (true /*Object.keys(data).length && data.password && data.password === process.env.GUESTLIST_PASS*/) {
+    if (Object.keys(data).length && data.password && data.password === process.env.GUESTLIST_PASS) {
         let yesCount = 0;
         let noCount = 0;
 

@@ -14,7 +14,7 @@ let transporter = nodemailer.createTransport({
 const sendErrorMail = (error) => {
     transporter.sendMail({
         from: `"Sheznat Wedding" <sheznat.wedding@gmail.com>`, // sender address
-        to: 'sheznat.wedding@gmail.com', // list of receivers
+        to: 'zeeshaanl@gmail.com', // list of receivers
         subject: `Error on Sheznat`, // Subject line
         text: `
             ${error}

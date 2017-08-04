@@ -35,6 +35,10 @@
   background-position: center;
   background-repeat: no-repeat; }
 
+span.meal-label {
+  display: inline-block;
+  min-width: 91px; }
+
 .intro-img-two {
   background-image: url("/images/intro2.jpg");
   position: absolute;
@@ -55,7 +59,10 @@
 
 @media (max-width: 736px) {
   .intro-img-one, .intro-img-two {
-    background-attachment: scroll !important; } }
+    background-attachment: scroll !important; }
+
+  .meal-pref {
+    margin: 30px auto 40px; } }
 .intro-text, .intro-rsvp {
   z-index: 2; }
 
@@ -84,6 +91,9 @@
 .rsvp-block.content {
   text-align: center;
   padding: 2rem !important; }
+
+.rsvp-header {
+  margin-bottom: 25px; }
 
 #rsvp-form {
   padding: 1rem !important;
@@ -184,6 +194,6 @@
     margin-top: 10px; }
 
   .submit-button {
-    width: 47% !important; } }
+    width: 54% !important; } }
 
 /*# sourceMappingURL=custom.css.map */
