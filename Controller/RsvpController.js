@@ -1,23 +1,28 @@
 const Guest = require('../Model/Guest');
-const sendMail = require('../utils/Mailer');
+const Mailer = require('../utils/Mailer');
+
+const sendMail = Mailer.sendMail;
+const sendErrorMail = Mailer.sendErrorMail;
 
 const rsvpAction = async (request, response) => {
     const data = request.body;
-    const { name, rsvp, meal } = data;
+    const { name, rsvp, nonVegetarian, vegetarian } = data;
 
     const guest = new Guest({
         name: name,
         rsvp: rsvp,
-        meal: meal,
-        created_at: new Date()
+        vegetarian: vegetarian,
+        nonVegetarian: nonVegetarian,
+        created_at: new Date(),
     });
 
     try {
-        await sendMail(name, rsvp, meal);
+        await sendMail(name, rsvp, nonVegetarian, vegetarian);
         response.json({ status: 200 });
         await guest.save();
     }
     catch (error) {
+        sendErrorMail(error);
         throw error;
     }
 };

@@ -16,23 +16,24 @@ const eventsHandler = function () {
     function attachListener() {
         $('#rsvp-form').on('submit', function (e) {
             $("#rsvp-form").attr("disabled", true);
+            $('.submit-button').addClass('submitted');
             e.preventDefault();
             $('.submit-text').addClass('hidden');
             $('.submit-success').addClass('hidden');
 
             $('.submit-loader').removeClass('hidden');
             const url = window.location.href;
-            console.log(url + '/rsvp');
-
+            setTimeout(() => {
+                $('.submit-loader').addClass('hidden');
+                $('.submit-success').removeClass('hidden');
+            }, 1000);
             $.ajax({
                 type: "POST",
                 cache: false,
                 url: url + 'rsvp',
                 data: $(this).serialize(),
                 success: function (data) {
-                    $('.submit-loader').addClass('hidden');
-                    $('.submit-success').removeClass('hidden');
-                    console.log(data);
+                    console.log('success');
                 }
             });
         });

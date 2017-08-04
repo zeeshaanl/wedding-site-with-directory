@@ -10,9 +10,21 @@
         <tr>
             <td>{{this.name}}</td>
             <td>{{this.rsvp}}</td>
-            <td>{{this.meal}}</td>
+            <td>
+                {{#if this.isComing}}
+                <span style="white-space: nowrap">Non-vegetarian : {{this.nonVegetarian}}</span>&nbsp; &nbsp;
+                <span style="white-space: nowrap">Vegetarian : {{this.vegetarian}}</span>
+                {{else}}
+                -
+                {{/if}}
+            </td>
         </tr>
         {{/each}}
     </table>
-    <div><h4>Yes: {{yesCount}}</h4><h4>No: {{noCount}}</h4></div>
+    <div>
+        <h4>Yes: {{yesCount}}</h4><h4>No: {{noCount}}</h4>
+    </div>
+    <div>
+        <h4>Non-Vegetarian: {{nonVegCount}}</h4><h4>Vegetarian: {{vegCount}}</h4>
+    </div>
 </div>

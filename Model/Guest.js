@@ -2,7 +2,8 @@ var mongoose = require('mongoose');
 var GuestSchema = new mongoose.Schema({
     name: String,
     rsvp: String,
-    meal: String,
+    vegetarian: String,
+    nonVegetarian: String,
     created_at: Date
 });
 mongoose.model('Guest', GuestSchema);

@@ -11,10 +11,21 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-const sendMail = (name, rsvp, meal) => {
+const sendErrorMail = (error) => {
+    transporter.sendMail({
+        from: `"Sheznat Wedding" <sheznat.wedding@gmail.com>`, // sender address
+        to: 'sheznat.wedding@gmail.com', // list of receivers
+        subject: `Error on Sheznat`, // Subject line
+        text: `
+            ${error}
+        `, // html body
+    });
+};
+
+const sendMail = (name, rsvp, nonVegetarian, vegetarian) => {
     return new Promise((resolve, reject) => {
         // send mail with defined transport object
-        transporter.sendMail(generateMail(name, rsvp, meal), (error, info) => {
+        transporter.sendMail(generateMail(name, rsvp, nonVegetarian, vegetarian), (error, info) => {
             if (error) {
                 reject(error);
             } else {
@@ -24,36 +35,41 @@ const sendMail = (name, rsvp, meal) => {
     });
 };
 
-const generateMail = (name, rsvp, meal) => {
+const generateMail = (name, rsvp, nonVegetarian, vegetarian) => {
     const rsvpColor = {
         Yes: 'green',
         No: 'red'
     };
-    const mealUnicode = {
-        Vegetarian: '🍅',
-        'Non-Vegetarian': '🍖'
-    };
 
-    const mealPreference = rsvp === 'Yes' ? `Their meal preference is <b>${meal}</b> ${mealUnicode[ meal ]}<br /><br />` : '';
+    let mealPreference = '';
+
+    if (rsvp === 'Yes') {
+        mealPreference = `
+            <br /><br />
+        🍖 Non-Vegetarian: <b>${nonVegetarian}</b><br /><br />
+        🍅 Vegetarian : <b>${vegetarian}</b>`
+    }
 
     return {
         from: `"Sheznat Wedding" <sheznat.wedding@gmail.com>`, // sender address
         to: 'sheznat.wedding@gmail.com', // list of receivers
         subject: `RSVP Notification - ${name} - ${rsvp}`, // Subject line
         text: `Hi Natasha and Shezad,
-                ${name} has responded with a ${rsvp}
-                Their meal preference is ${meal}
+                ${name} has responded with a ${rsvp}.
+                ${mealPreference}
                 
-                - With Love From Your Wedding Site ❤️`, // html body
+                <br /><br />From: Your Wedding Site️ ❤`, // html body
 
         html: `Hi Natasha and Shezad,
             <br /><br />
-            <b>${name}</b> has responded with a <b style="color:${rsvpColor[ rsvp ]}">${rsvp}</b>
-            <br /><br />
+            <b>${name}</b> has responded with a <b style="color:${rsvpColor[ rsvp ]}">${rsvp}</b>.
             ${mealPreference}
             
-        From: Your Wedding Site️ ❤`, // plain text body
+        <br /><br />From: Your Wedding Site️ ❤`, // plain text body
     };
 };
 
-module.exports = sendMail;
+module.exports = {
+    sendMail,
+    sendErrorMail
+};

@@ -48,54 +48,108 @@
 
     <!-- Three -->
     <section class="spotlight style1 orient-left content-align-left image-position-center">
+        <div class="image mobile">
+            <img src="images/diagonal-left.jpg" alt="" />
+        </div>
         <div class="content">
-            <h2>Welcome to the “city of dreams”.</h2>
+            <h2>Welcome to the “city of dreams”</h2>
             <p>DISCOVER<br />
                 As well as attending our wedding celebration, we want you to also experience and explore the magic that is Mumbai.
                 Whether it is a trip to the historic, Gate way of India or dinner at the Taj; there is so much to see and do.</p>
         </div>
-        <div class="image">
+        <div class="image desktop">
             <img class="diagonal-left" src="images/diagonal-left.jpg" alt="" />
             <img class="diagonal-right" src="images/diagonal-right.jpg" alt="" />
         </div>
     </section>
 
+    <!-- Four -->
+    <section class="adress-block">
+        <div class="spotlight style1">
+            <div class="intro-content content content-align-center orient-center">
+                <h2>OUR WEDDING</h2>
+                <p>
+                    Our wedding will be a traditional Parsi ceremony, which will involve age-old rituals.
+                    7pm onwards, we look forward to you celebrating our important day with us.<br />
+                    Location:<br />
+                    Seth Jeejeebhoy Dadabhoy Agiary Baug<br />
+                    <b><i>
+                        Off Pilot Bunder Road, Near Afghan Church<br />
+                        Colaba, Mumbai – 400 005
+                    </i></b>
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Seven -->
-    <section class="wrapper style1 align-center">
-        <div class="inner medium">
-            <h2>RSVP</h2>
-            <form id="rsvp-form" method="post" action="#">
-                <div class="first-name col-sm-6 col-xs-12">
-                    <input type="text" name="name" placeholder="First and Last Name" id="name" value="" />
-                </div>
-
-                <div class="rsvp-radio-container col-sm-6 col-xs-12">
-                    <div class="field third first rsvp-radio">
-                        <input type="radio" id="rsvp-yes" value="Yes" name="rsvp" checked />
-                        <label for="rsvp-yes">Yes</label>
+    <section class="spotlight style1 orient-left content-align-left image-position-center">
+        <div class="rsvp-block content">
+            <div class="inner medium">
+                <h2>We would love you to join us for our big day</h2>
+                <form id="rsvp-form" method="post" action="#">
+                    <h3>RSVP</h3>
+                    <div class="first-name col-sm-6 col-xs-12">
+                        <input type="text" name="name" placeholder="First and Last Name" id="name" value="" required />
                     </div>
-                    <div class="field third rsvp-radio">
-                        <input type="radio" id="rsvp-no" value="No" name="rsvp" />
-                        <label for="rsvp-no">Can't Make It</label>
+
+                    <div class="rsvp-radio-container col-sm-6 col-xs-12">
+                        <div class="field third first rsvp-radio">
+                            <input type="radio" id="rsvp-yes" value="Yes" name="rsvp" checked />
+                            <label for="rsvp-yes">Yes</label>
+                        </div>
+                        <div class="field third rsvp-radio">
+                            <input type="radio" id="rsvp-no" value="No" name="rsvp" />
+                            <label for="rsvp-no">Can't Make It</label>
+                        </div>
                     </div>
-                </div>
 
-                <div class="select-wrapper meal-pref col-sm-6 col-xs-12">
-                    <select name="meal" id="meal">
-                        <option name="default" value="-">Meal Preference-</option>
-                        <option value="Non-Vegetarian">Non-veg Soju Parsi Bhonu</option>
-                        <option value="Vegetarian">Veg Thali</option>
-                    </select>
-                </div>
+                    <div class="meal-pref col-sm-6 col-xs-12">
+                        <div class="select-container">
+                            <select class="meal-pref-select nonVegetarian" name="nonVegetarian" id="nonVegetarian">
+                                <option value="0">0</option>
+                                <option selected="selected" value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                            <span class="nonVegetarian">Non Vegetarian</span>
+                            <i class="select-down-icon fa fa-chevron-down"></i>
+                        </div>
+                        <div class="select-container">
+                            <select class="meal-pref-select vegetarian" name="vegetarian" id="vegetarian">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                            <span class="vegetarian">Vegetarian</span>
+                            <i class="select-down-icon fa fa-chevron-down"></i>
+                        </div>
+                    </div>
 
-                <ul class="actions">
-                    <button class="submit-button" type="submit" name="submit" id="submit" />
-                    <span class="submit-text">Confirm</span>
-                    <img class="submit-loader hidden" src="assets/pie.svg" />
-                    <img class="submit-success hidden" src="assets/tick.png" />
-                </ul>
-            </form>
-
+                    <ul class="actions">
+                        <button class="submit-button" type="submit" name="submit" id="submit" />
+                        <span class="submit-text">Confirm</span>
+                        <img class="submit-loader hidden" src="assets/pie.svg" />
+                        <img class="submit-success hidden" src="assets/tick.png" />
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <div class="image">
+            <img class="diagonal-left" src="images/rsvp-right.jpg" alt="" />
         </div>
     </section>
 
