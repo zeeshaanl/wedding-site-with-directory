@@ -203,8 +203,16 @@
 	/// Wraps @content in a @media block targeting a specific orientation.
 	/// @param {string} $orientation Orientation.
 	@mixin orientation($orientation) {
-		@media screen and (orientation: #{$orientation}) {
-			@content;
+		@if $orientation == 'landscape' {
+			@media screen and (min-aspect-ratio: 13/9) {
+				@content;
+			}
+		}
+
+		@if $orientation == 'portrait' {
+			@media screen and (max-aspect-ratio: 13/9) {
+				@content;
+			}
 		}
 	}
 

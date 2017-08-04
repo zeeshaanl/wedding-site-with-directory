@@ -29,22 +29,22 @@
 .intro-img-one {
   background-image: url("/images/intro1.jpg");
   z-index: 0;
+  background-size: cover;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-repeat: no-repeat; }
 
 .intro-img-two {
   background-image: url("/images/intro2.jpg");
   position: absolute;
   top: 0;
   width: 100vw;
+  background-size: cover;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
   z-index: 1; }
@@ -53,6 +53,9 @@
   opacity: 1;
   transition: opacity 1.5s ease-in-out; }
 
+@media (max-width: 736px) {
+  .intro-img-one, .intro-img-two {
+    background-attachment: scroll !important; } }
 .intro-text, .intro-rsvp {
   z-index: 2; }
 
@@ -114,7 +117,8 @@
     position: absolute;
     left: 45px;
     top: 11px;
-    font-size: 16px; }
+    font-size: 16px;
+    pointer-events: none; }
 
 .meal-pref .select-wrapper {
   display: inline; }
@@ -146,18 +150,27 @@
 .site-footer {
   padding: 1rem 0; }
 
-@media (max-width: 736px) {
-  .image.desktop .diagonal-left {
-    display: none !important; } }
+@media (max-width: 736px) and (orientation: portrait) {
+  .image.desktop .diagonal-images {
+    display: none !important; }
+
+  .rsvp-block.content {
+    padding-bottom: 0 !important; } }
+@media (orientation: landscape) {
+  .image.mobile {
+    display: none !important; }
+
+  .image.desktop .diagonal-images {
+    display: block !important; }
+
+  .diagonal-images {
+    border-top: 1px solid #ebebeb; } }
 @media (min-width: 737px) {
   .image.mobile {
-    display: none; } }
-@media (max-width: 767px) {
-  #rsvp-form .meal-pref {
-    margin: 35px auto;
-    width: 100%; }
-    #rsvp-form .meal-pref select {
-      font-size: 18px; } }
+    display: none; }
+
+  .diagonal-images {
+    border-top: 1px solid #ebebeb; } }
 @media (max-width: 991px) {
   #rsvp-form .rsvp-radio-container {
     width: 100%; }

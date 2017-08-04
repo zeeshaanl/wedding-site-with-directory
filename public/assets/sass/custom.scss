@@ -38,12 +38,13 @@
 .intro-img-one {
 	background-image: url("/images/intro1.jpg");
 	z-index: 0;
+	background-size: cover;
 
 	/* Create the parallax scrolling effect */
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+
 }
 
 .intro-img-two {
@@ -51,12 +52,12 @@
 	position: absolute;
 	top: 0;
 	width: 100vw;
+	background-size: cover;
 
 	/* Create the parallax scrolling effect */
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
 
 	opacity: 0;
 	transition: opacity 1.5s ease-in-out;
@@ -67,6 +68,12 @@
 	.intro-img-two {
 		opacity: 1;
 		transition: opacity 1.5s ease-in-out;
+	}
+}
+
+@media (max-width: 736px) {
+	.intro-img-one, .intro-img-two {
+		background-attachment: scroll !important;
 	}
 }
 
@@ -118,15 +125,7 @@
 		margin: 0 auto;
 	}
 	.meal-pref {
-		//width: 70%;
-		//select {
-		//	height: 75px
-		//}
 		margin: 45px auto;
-	}
-	.select-wrapper:before {
-		//height: 70px;
-		//line-height: 70px;
 	}
 	.rsvp-radio-container {
 		width: 70%;
@@ -152,6 +151,7 @@
 		left: 45px;
 		top: 11px;
 		font-size: 16px;
+		pointer-events:none;
 	}
 }
 
@@ -192,9 +192,25 @@
 	padding: 1rem 0;
 }
 
-@media (max-width: 736px) {
-	.image.desktop .diagonal-left {
+@media (max-width: 736px) and (orientation: portrait) {
+	.image.desktop .diagonal-images {
 		display: none !important;
+	}
+
+	.rsvp-block.content {
+		padding-bottom: 0 !important;
+	}
+}
+
+@media (orientation: landscape) {
+	.image.mobile {
+		display: none !important;
+	}
+	.image.desktop .diagonal-images {
+		display: block !important;
+	}
+	.diagonal-images {
+		border-top: 1px solid #ebebeb;
 	}
 }
 
@@ -202,19 +218,22 @@
 	.image.mobile {
 		display: none;
 	}
-}
-
-@media (max-width: 767px) {
-	#rsvp-form {
-		.meal-pref {
-			margin: 35px auto;
-			width: 100%;
-			select {
-				font-size: 18px;
-			}
-		}
+	.diagonal-images {
+		border-top: 1px solid #ebebeb;
 	}
 }
+
+//@media (max-width: 767px) {
+//	#rsvp-form {
+//		.meal-pref {
+//			margin: 35px auto;
+//			width: 100%;
+//			select {
+//				font-size: 18px;
+//			}
+//		}
+//	}
+//}
 
 @media (max-width: 991px) {
 	#rsvp-form {
@@ -238,3 +257,4 @@
 		width: 47% !important;
 	}
 }
+

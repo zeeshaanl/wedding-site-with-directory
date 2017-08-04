@@ -23,7 +23,7 @@ const eventsHandler = function () {
 
             $('.submit-loader').removeClass('hidden');
             const url = window.location.href;
-            setTimeout(() => {
+            setTimeout(function () {
                 $('.submit-loader').addClass('hidden');
                 $('.submit-success').removeClass('hidden');
             }, 1000);
@@ -34,8 +34,16 @@ const eventsHandler = function () {
                 data: $(this).serialize(),
                 success: function (data) {
                     console.log('success');
-                }
+                    console.log(data);
+                },
+                error: function (xhr, status, error) {
+                    console.log('error');
+                    console.log(xhr);
+                    console.log(status);
+                    console.log(error);
+                },
             });
+            return false;
         });
         $('.rsvp-radio input:radio').click(function () {
             if ($(this).val() === 'Yes') {
