@@ -57,12 +57,6 @@ span.meal-label {
   opacity: 1;
   transition: opacity 1.5s ease-in-out; }
 
-@media (max-width: 736px) {
-  .intro-img-one, .intro-img-two {
-    background-attachment: scroll !important; }
-
-  .meal-pref {
-    margin: 30px auto 40px; } }
 .intro-text, .intro-rsvp {
   z-index: 2; }
 
@@ -160,6 +154,12 @@ span.meal-label {
 .site-footer {
   padding: 1rem 0; }
 
+@media (max-width: 736px) {
+  .intro-img-one, .intro-img-two {
+    background-attachment: scroll !important; }
+
+  .meal-pref {
+    margin: 30px auto 40px !important; } }
 @media (max-width: 736px) and (orientation: portrait) {
   .image.desktop .diagonal-images {
     display: none !important; }

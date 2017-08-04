@@ -76,15 +76,6 @@ span.meal-label {
 	}
 }
 
-@media (max-width: 736px) {
-	.intro-img-one, .intro-img-two {
-		background-attachment: scroll !important;
-	}
-	.meal-pref {
-		margin: 30px auto 40px
-	}
-}
-
 .intro-text, .intro-rsvp {
 	z-index: 2;
 }
@@ -202,6 +193,15 @@ span.meal-label {
 
 .site-footer {
 	padding: 1rem 0;
+}
+
+@media (max-width: 736px) {
+	.intro-img-one, .intro-img-two {
+		background-attachment: scroll !important;
+	}
+	.meal-pref {
+		margin: 30px auto 40px !important;
+	}
 }
 
 @media (max-width: 736px) and (orientation: portrait) {
