@@ -32,15 +32,11 @@ const eventsHandler = function () {
                 cache: false,
                 url: url + 'rsvp',
                 data: $(this).serialize(),
-                success: function (data) {
+                success: function () {
                     console.log('success');
-                    console.log(data);
                 },
-                error: function (xhr, status, error) {
+                error: function () {
                     console.log('error');
-                    console.log(xhr);
-                    console.log(status);
-                    console.log(error);
                 },
             });
             return false;
@@ -57,7 +53,7 @@ const eventsHandler = function () {
         $('.rsvp-button').click(function () {
             $('html,body').animate({
                 scrollTop: $(".inner.medium").offset().top
-            });
+            }, 1250);
         })
     }
 
