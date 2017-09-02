@@ -178,25 +178,21 @@ span.meal-label {
     display: none !important; }
 
   .image.desktop .diagonal-images {
-    display: block !important; }
-
-  .diagonal-images {
-    border-top: 1px solid #ebebeb; } }
+    display: block !important; } }
 @media (min-width: 737px) {
   .image.mobile {
     display: none; }
 
-  .diagonal-images {
-    border-top: 1px solid #ebebeb; }
-
   .section-three, .section-four {
-    min-height: 36rem; }
+    min-height: 34rem; }
 
   .city-dreams-image {
-    width: 60% !important; }
+    width: 54% !important;
+    height: 32rem !important;
+    margin-top: 1rem; }
 
   .city-dreams-content {
-    width: 40% !important; } }
+    width: 46% !important; } }
 @media (max-width: 991px) {
   #rsvp-form .rsvp-radio-container {
     width: 100%; }
@@ -211,5 +207,8 @@ span.meal-label {
 
   .submit-button {
     width: 54% !important; } }
+@media (min-width: 1681px) {
+  .city-dreams-image {
+    margin-top: 4rem !important; } }
 
 /*# sourceMappingURL=custom.css.map */

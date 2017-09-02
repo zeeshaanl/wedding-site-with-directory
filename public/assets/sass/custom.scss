@@ -230,9 +230,6 @@ span.meal-label {
 	.image.desktop .diagonal-images {
 		display: block !important;
 	}
-	.diagonal-images {
-		border-top: 1px solid #ebebeb;
-	}
 }
 
 @media (min-width: 737px) {
@@ -240,16 +237,18 @@ span.meal-label {
 		display: none;
 	}
 	.diagonal-images {
-		border-top: 1px solid #ebebeb;
+		//border-top: 1px solid #ebebeb;
 	}
 	.section-three, .section-four {
-		min-height: 36rem;
+		min-height: 34rem;
 	}
 	.city-dreams-image {
-		width: 60% !important;
+		width: 54% !important;
+		height: 32rem !important;
+		margin-top: 1rem;
 	}
 	.city-dreams-content {
-		width: 40% !important;
+		width: 46% !important;
 	}
 }
 
@@ -273,6 +272,12 @@ span.meal-label {
 	}
 	.submit-button {
 		width: 54% !important;
+	}
+}
+
+@media (min-width: 1681px) {
+	.city-dreams-image {
+		margin-top: 4rem !important;
 	}
 }
 
