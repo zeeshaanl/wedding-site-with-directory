@@ -12,3 +12,7 @@ Dockerfile
 docker-compose.yml
 
 .idea/
+
+*.map
+.sass-cache/
+

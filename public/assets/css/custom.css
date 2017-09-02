@@ -82,6 +82,9 @@ span.meal-label {
     font-weight: bold;
     font-size: 16px; }
 
+.content-header {
+  margin-bottom: 2rem; }
+
 .rsvp-block.content {
   text-align: center;
   padding: 2rem !important; }
@@ -152,7 +155,11 @@ span.meal-label {
   height: 75%; }
 
 .site-footer {
-  padding: 1rem 0; }
+  padding: 1rem 0;
+  position: relative; }
+
+.photos-courtesy {
+  font-size: 17px; }
 
 @media (max-width: 736px) {
   .intro-img-one, .intro-img-two {
@@ -180,7 +187,16 @@ span.meal-label {
     display: none; }
 
   .diagonal-images {
-    border-top: 1px solid #ebebeb; } }
+    border-top: 1px solid #ebebeb; }
+
+  .section-three, .section-four {
+    min-height: 36rem; }
+
+  .city-dreams-image {
+    width: 60% !important; }
+
+  .city-dreams-content {
+    width: 40% !important; } }
 @media (max-width: 991px) {
   #rsvp-form .rsvp-radio-container {
     width: 100%; }

@@ -105,6 +105,10 @@ span.meal-label {
 	}
 }
 
+.content-header {
+	margin-bottom: 2rem;
+}
+
 .rsvp-block.content {
 	text-align: center;
 	padding: 2rem !important;
@@ -193,6 +197,11 @@ span.meal-label {
 
 .site-footer {
 	padding: 1rem 0;
+	position: relative;
+}
+
+.photos-courtesy {
+	font-size: 17px;
 }
 
 @media (max-width: 736px) {
@@ -232,6 +241,15 @@ span.meal-label {
 	}
 	.diagonal-images {
 		border-top: 1px solid #ebebeb;
+	}
+	.section-three, .section-four {
+		min-height: 36rem;
+	}
+	.city-dreams-image {
+		width: 60% !important;
+	}
+	.city-dreams-content {
+		width: 40% !important;
 	}
 }
 
