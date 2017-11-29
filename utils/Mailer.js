@@ -42,8 +42,7 @@ const generateMail = (name, rsvp, nonVegetarian, vegetarian) => {
     }
 
     return {
-        // to: 'lakdawala2018@gmail.com', // list of receivers
-        to: 'zeeshaanl@gmail.com',
+        to: 'lakdawala2018@gmail.com', // list of receivers
         from: `"Sheznat Wedding" <sheznat.wedding@mailer.com>`, // sender address
         subject: `RSVP Notification - ${name} - ${rsvp}`, // Subject line
         text: `Hi Natasha and Shezad,
