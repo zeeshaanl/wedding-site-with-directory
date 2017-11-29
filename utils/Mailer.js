@@ -1,18 +1,8 @@
-const nodemailer = require('nodemailer');
-
-// create reusable transporter object using the default SMTP transport
-let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // secure:true for port 465, secure:false for port 587
-    auth: {
-        user: 'sheznat.wedding@gmail.com',
-        pass: process.env.MAILER_PASS
-    }
-});
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const sendErrorMail = (error) => {
-    transporter.sendMail({
+    sgMail.send({
         from: `"Sheznat Wedding" <sheznat.wedding@gmail.com>`, // sender address
         to: 'zeeshaanl@gmail.com', // list of receivers
         subject: `Error on Sheznat`, // Subject line
@@ -25,13 +15,14 @@ const sendErrorMail = (error) => {
 const sendMail = (name, rsvp, nonVegetarian, vegetarian) => {
     return new Promise((resolve, reject) => {
         // send mail with defined transport object
-        transporter.sendMail(generateMail(name, rsvp, nonVegetarian, vegetarian), (error, info) => {
-            if (error) {
+        sgMail
+            .send(generateMail(name, rsvp, nonVegetarian, vegetarian))
+            .then(info => {
+                resolve(info.response)
+            })
+            .catch(error => {
                 reject(error);
-            } else {
-                resolve(info.response);
-            }
-        });
+            })
     });
 };
 
@@ -51,8 +42,9 @@ const generateMail = (name, rsvp, nonVegetarian, vegetarian) => {
     }
 
     return {
-        from: `"Sheznat Wedding" <sheznat.wedding@gmail.com>`, // sender address
-        to: 'lakdawala2018@gmail.com', // list of receivers
+        // to: 'lakdawala2018@gmail.com', // list of receivers
+        to: 'zeeshaanl@gmail.com',
+        from: `"Sheznat Wedding" <sheznat.wedding@mailer.com>`, // sender address
         subject: `RSVP Notification - ${name} - ${rsvp}`, // Subject line
         text: `Hi Natasha and Shezad,
                 ${name} has responded with a ${rsvp}.
@@ -62,7 +54,7 @@ const generateMail = (name, rsvp, nonVegetarian, vegetarian) => {
 
         html: `Hi Natasha and Shezad,
             <br /><br />
-            <b>${name}</b> has responded with a <b style="color:${rsvpColor[ rsvp ]}">${rsvp}</b>.
+            <b>${name}</b> has responded with a <b style="color:${rsvpColor[rsvp]}">${rsvp}</b>.
             ${mealPreference}
             
         <br /><br />From: Your Wedding Site️ ❤`, // plain text body
